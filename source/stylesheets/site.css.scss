@@ -1,11 +1,20 @@
+@charset "utf-8";
+
+@import 'bourbon';
+@import 'base/base';
+@import 'neat';
+
+
+$section-padding: 1em;
+$section-spacing: 10vh;
+
 body {
-  background-color: #fbc547;
+  background-color: white;
   color: #333;
   font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir",
     "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans",
     "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu",
     "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
-  padding: 18vh 1rem;
   text-align: center;
 }
 
@@ -18,7 +27,121 @@ a {
   }
 }
 
-.middleman-logo {
-  margin-bottom: 1rem;
-  width: 10rem;
+.main-container {
+  max-width: 960px;
+  display: block;
+  margin: 0 auto;
+}
+
+nav {
+  padding: 1em;
+
+  section.logo {
+    float: left;
+  }
+
+  section.navigation {
+    float: right;
+  }
+}
+
+section.splash,
+section.kickstarter,
+section.features,
+section.benefit,
+section.benefit-2,
+section.kickstarter-2 {
+  margin: $section-spacing;
+}
+
+section.splash {
+  padding: $section-padding;
+}
+
+section.kickstarter {
+  @include grid-container;
+
+  img {
+    @include grid-column(12);
+  }
+
+  article {
+    @include grid-column(4);
+  }
+}
+
+
+section.features {
+  @include grid-container;
+
+  figure {
+    @include grid-column(4);
+  }
+}
+
+section.benefit {
+  @include grid-container;
+
+  p, strong {
+    @include grid-column(12);
+  }
+
+  figure {
+    @include grid-column(12);
+    @include grid-collapse;
+  }
+
+  ul {
+    @include grid-column(6);
+  }
+}
+
+section.benefit-2 {
+  section.grid {
+    @include grid-container;
+
+    article {
+      @include grid-column(4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: blue;
+      height: auto;
+      height: 200px;
+      margin-bottom: $base-spacing;
+      padding: 0 $base-spacing;
+
+      h3 {
+        text-align: center;
+        color: white;
+      }
+    }
+  }
+}
+
+section.kickstarter-2 {
+  article.kickstarter-2__link {
+    display: flex;
+    flex-flow: row nowarp;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      flex: 1;
+    }
+
+    a {
+      flex: 3;
+    }
+  }
+}
+
+footer {
+  padding: $section-spacing;
+  background-color: grey;
+  margin-bottom: 0;
+
+  a {
+    color: white;
+  }
 }

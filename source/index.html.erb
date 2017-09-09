@@ -3,11 +3,16 @@ title: Juniorpreneur
 ---
 
 <nav>
-  <%= image_tag 'logo.png' %>
-  <%= link_to 'Kick Starter', '#' %>
-  <%= link_to 'The Product', '#' %>
-  <%= link_to 'Learning Program', '#' %>
-  <%= link_to 'Connect With Us', '#' %>
+  <section class="logo">
+    <%= image_tag 'logo.png' %>
+  </section>
+
+  <section class="navigation">
+    <%= link_to 'Kick Starter', '#' %> |
+    <%= link_to 'The Product', '#' %> |
+    <%= link_to 'Learning Program', '#' %> |
+    <%= link_to 'Connect With Us', '#' %>
+  </section>
 </nav>
 
 <section class="splash">
@@ -20,27 +25,34 @@ title: Juniorpreneur
   <h1>
     Go Beyond the Lemonade Stand!
   </h1>
-
-  <h3>GOING LIVE ON</h3>
 </section >
 
 
 <section class="kickstarter">
+  <h1>GOING LIVE ON</h1>
+
   <%= image_tag 'KickStarter-logo.png' %>
 
   <article class="days">
-    <h1>10</h1>
+    <header>
+      <h1>10</h1>
+    </header>
+
     <h2>Days</h2>
   </article>
 
   <article class="hours">
-    <h1>10</h1>
-    <h2>Days</h2>
+    <header>
+      <h1>10</h1>
+    </header>
+    <h2>Hours</h2>
   </article>
 
   <article class="minutes">
-    <h1>10</h1>
-    <h2>Days</h2>
+    <header>
+      <h1>10</h1>
+    </header>
+    <h2>Minutes</h2>
   </article>
 
   <p>SIGN UP HERE</p>
@@ -114,7 +126,7 @@ title: Juniorpreneur
   <section class="grid">
     <% data.grid.each do |item| %>
       <article class="grid-item">
-        <h1><%= item %></h1>
+        <h3><%= item %></h3>
       </article>
     <% end %>
   </section>
@@ -124,12 +136,16 @@ title: Juniorpreneur
   <p>Over $250 if you bought the parts individually at the store</p>
   <strong>Our Price: $179.95</strong>
 
-  <% link_to '#' do %>
-    <div>
-      <h1>Support us on Kickstarter:</h1>
-      <h1>$119.95 CAD - Save 30%</h1>
-    </div>
-  <% end %>
+  <article class="kickstarter-2__link" %>
+    <%= image_tag 'kickstarter-circle.png' %>
+    <% link_to '#' do %>
+      <div>
+        <h1>Support us on Kickstarter:</h1>
+        <h1>$119.95 CAD - Save 30%</h1>
+      </div>
+    <% end %>
+    <%= image_tag 'kickstarter-circle.png' %>
+  </article>
 
   <p>(that's approx $90 USD)</p>
   <p>includes all six learning modules</p>
@@ -144,11 +160,4 @@ title: Juniorpreneur
   <%= image_tag 'juniorpreneur-logo.png'%>
 </section>
 
-<footer>
-  <%= link_to 'Kick Starter', '#' %>
-  <%= link_to 'The Product', '#' %>
-  <%= link_to 'Learning Program', '#' %>
-  <%= link_to 'Connect With Us', '#' %>
 
-  <p>© JuniorPreneur, Calgary, Canada</p>
-</footer>
