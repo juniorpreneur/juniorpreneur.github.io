@@ -4,7 +4,7 @@ title: Juniorpreneur
 
 <nav>
   <section class="logo">
-    <%= image_tag 'logo.png' %>
+    <%= image_tag 'juniorpreneur-logo.jpg' %>
   </section>
 
   <section class="navigation">
@@ -27,11 +27,12 @@ title: Juniorpreneur
   </h1>
 </section >
 
-
 <section class="kickstarter">
-  <h1>GOING LIVE ON</h1>
+  <h2>GOING LIVE ON</h2>
 
-  <%= image_tag 'KickStarter-logo.png' %>
+  <div class="kickstarter-logo">
+    <%= image_tag 'kickstarter-logo.png' %>
+  </div>
 
   <article class="days">
     <header>
@@ -55,11 +56,10 @@ title: Juniorpreneur
     <h2>Minutes</h2>
   </article>
 
-  <p>SIGN UP HERE</p>
-  <p>TO BE THE FIRST TO KNOW ONCE WE'RE LIVE</p>
-  <p>(SUPER EARLY-BIRD RATES AVAILABLE!)</p>
+  <%= link_to 'SIGN UP HERE' , '#' %>
+  <p><strong>TO BE THE FIRST TO KNOW ONCE WE'RE LIVE</strong></p>
+  <strong class="green">(SUPER EARLY-BIRD RATES AVAILABLE!)</strong>
 </section>
-
 
 <section class="features">
   <figure>
@@ -86,10 +86,9 @@ title: Juniorpreneur
   <%= link_to 'DOWNLOAD MODULE 1 FREE', '#' %>
 </section>
 
-
 <section class="benefit">
   <figure>
-    <%= image_tag 'natural-entrepreneur.png' %>
+    <%= image_tag 'natural-entrepreneur.jpg' %>
   </figure>
 
   <p>
@@ -98,25 +97,22 @@ title: Juniorpreneur
   </p>
 
   <strong>
-    Your Child will learn skills typically 
+    Your child will learn skills typically 
     overlooked by traditional school cirriculum:
   </strong>
 
-  <ul>
-    <li>Working with money</li>
-    <li>Responsibility</li>
-    <li>Self discipline</li>
-    <li>Creating value for others</li>
-  </ul>
+  <% data.benefits.each_slice(4) do |benefit_list| %>
+    <ul>
+      <% benefit_list.each do |benefit| %>
+        <li><%= image_tag 'checkbox.png' %><h2><%= benefit %><h2></li>
+      <% end %>
+    </ul>
+  <% end %>
 
-  <ul>
-    <li>Customer service</li>
-    <li>Resiliency & grit</li>
-    <li>Innovation</li>
-    <li>Leadership</li>
-  </ul>
+  <figure>
+    <%= image_tag 'natural-entrepreneur-2.jpg' %>
+  </figure>
 </section>
-
 
 <section class="benefit-2">
   <h1>And it's not just for lemonade.</h1>
@@ -144,7 +140,7 @@ title: Juniorpreneur
         <h1>$119.95 CAD - Save 30%</h1>
       </div>
     <% end %>
-    <%= image_tag 'kickstarter-circle.png' %>
+    <%= image_tag 'kickstarter-circle-live.png' %>
   </article>
 
   <p>(that's approx $90 USD)</p>
@@ -156,8 +152,8 @@ title: Juniorpreneur
   <h2>The best investment we can make is into our kids...after all,</h2>
   <h1>today's JuniorPreneurs are tomorrow's</h1>
   <h1>visionaries, innovators, and leaders!</h2>
-
-  <%= image_tag 'juniorpreneur-logo.png'%>
 </section>
 
-
+<section class="logo-section">
+  <%= image_tag 'juniorpreneur-logo.jpg' %>
+</section>
