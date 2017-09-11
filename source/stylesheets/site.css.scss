@@ -6,6 +6,7 @@
 @import 'product';
 @import 'learning';
 @import 'connect';
+@import 'ba';
 
 
 body {
@@ -285,4 +286,63 @@ footer {
   a {
     color: white;
   }
+}
+
+section.contact-header {
+  display: block;
+  margin: 0 auto;
+  max-width: 700px;
+  h1 {
+    font-weight: normal;
+    font-size: 3em;
+    color: blue;
+  }
+}
+
+section.contact-form {
+  @include grid-collapse;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  margin: $base-spacing;
+  width: 110vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: lightgrey;
+  padding: $base-spacing;
+
+
+  form {
+    min-width: 700px;
+    margin-left: -2 * $base-spacing;
+
+    div.form-group {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+
+      input.full-width {
+        margin-left: $small-spacing;
+      }
+
+      input.half-width {
+        margin-left: $small-spacing;
+      }
+    }
+
+    input[type="submit"] {
+      border-radius: 40px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+section.thank-you {
+  margin: $section-spacing 0;
 }
