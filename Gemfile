@@ -8,3 +8,4 @@ gem 'wdm', '~> 0.1', platforms: [:mswin, :mingw]
 gem 'bourbon'
 gem 'bitters'
 gem 'neat'
+gem 'middleman-gh-pages'
