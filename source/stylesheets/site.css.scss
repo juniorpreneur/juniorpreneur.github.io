@@ -3,12 +3,8 @@
 @import 'bourbon';
 @import 'base/base';
 @import 'neat';
+@import 'product';
 
-
-$section-padding: 1em;
-$section-spacing: 10vh;
-
-$green: #14E06E;
 
 body {
   background-color: white;
@@ -273,6 +269,8 @@ section.logo-section {
 }
 
 footer {
+  @include grid-column(12);
+  @include grid-collapse;
   padding: $section-spacing;
   background-color: grey;
   margin-bottom: 0;

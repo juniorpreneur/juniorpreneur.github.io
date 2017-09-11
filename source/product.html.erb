@@ -2,3 +2,39 @@
 title: Juniorpreneur
 ---
 
+<section class="full-shot">
+  <figure>
+    <%= image_tag 'product.gif' %>
+  </figure>
+</section>
+
+<section class='close-shots'>
+  <% (1..6).each do |n| %>
+    <figure>
+      <%= image_tag "closeup0#{n}.jpg" %>
+    </figure>
+  <% end %>
+</section>
+
+<section class="specifications">
+  <table>
+    <tr>
+      <th colspan=2>PRODUCT SPECIFICATIONS</th>
+    </tr>
+    <% data.specifications.each do |key, value| %>
+    <tr>
+      <td class="table-key"><%= key.upcase %></td>
+      <td><%= value %></td>
+    </tr>
+    <% end %>
+  </table>
+  <figure>
+  <%= image_tag 'measurements.jpg' %>
+  </figure>
+</section>
+
+<section class="easy-transport">
+  <figure>
+    <%= image_tag 'product-transport.jpg' %>
+  </figure>
+</section>

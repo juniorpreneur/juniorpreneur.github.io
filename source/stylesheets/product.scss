@@ -1,0 +1,81 @@
+div {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: stretch;
+
+  section.full-shot {
+    flex: 1;
+    @include grid-column(6);
+    margin-bottom: $small-spacing;
+    img {
+      margin-bottom: $small-spacing;
+    }
+  }
+
+  section.close-shots {
+    @include grid-column(6);
+    flex: 1;
+
+    figure {
+      @include grid-column(3 of 6);
+
+      img {
+        margin-bottom: $small-spacing;
+        max-height: 175px;
+      }
+    }
+  }
+}
+
+section.specifications {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: $base-spacing;
+  border-bottom: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+  background-size: 20px 20px;
+  background-image: linear-gradient(to right, lightgrey 1px, transparent 1px),
+    linear-gradient(to bottom, lightgrey 1px, transparent 1px);
+  @include grid-column(12);
+
+  table {
+    background-color: white;
+    @include grid-column(6);
+    margin-top: 0;
+    border: 1px solid lightgrey;
+
+    th {
+      background-color: #4D4C4C;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    td {
+      border: 1px solid lightgrey;
+      font-size: 1.25em;
+      padding-left: 1em;
+    }
+
+    td.table-key {
+      text-align: right;
+      color: grey;
+    }
+  }
+
+  figure {
+    @include grid-column(6);
+
+    img {
+      max-height: 300px;
+    }
+  }
+}
+
+section.easy-transport {
+  margin: $section-spacing 0;
+  @include grid-column(12);
+}
