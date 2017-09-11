@@ -1,0 +1,37 @@
+<section class="module-header">
+  <h2>
+    The JuniorPreneur cirriculum is comprised of the following six modules,
+    which guide you through the essentials of building a business plan, testing it
+    in real-life scenarios, and fine tuning your formula for the best results!
+  </h2>
+</section>
+
+<section class="modules">
+  <% data.modules.each_with_index do |product_module, index| %>
+    <div class="module-container">
+    <% if index == 0 %>
+      <article class="active-module">
+    <% else %>
+      <article class="unactive-module">
+    <% end %>
+
+    <p>MODULE <%= index + 1 %></p>
+
+    <header>
+    <h1>
+      <%= product_module %>
+    </h1>
+    </header>
+
+    <div class="download-container">
+      <%= image_tag 'download.png' %>
+      <p>Download<p>
+    </div>
+  </article>
+  <% if index != 0 %>
+    <small>MEMBERSHIP REQUIRED</small>
+  <% end %>
+  </div>
+  <% end %>
+</section>
+
