@@ -75,6 +75,7 @@ title: Juniorpreneur
     overlooked by traditional school cirriculum:
   </strong>
 
+  <div class="benefit-list-container">
   <% data.benefits.each_slice(4) do |benefit_list| %>
     <ul>
       <% benefit_list.each do |benefit| %>
@@ -82,6 +83,7 @@ title: Juniorpreneur
       <% end %>
     </ul>
   <% end %>
+  </div>
 
   <figure>
     <%= image_tag 'natural-entrepreneur-2.jpg' %>
