@@ -314,6 +314,13 @@ section.benefit {
 }
 
 section.benefit-2 {
+
+  h2 {
+    font-weight: normal;
+    margin-bottom: $base-spacing;
+    line-height: 1.5;
+  }
+
   section.grid {
     display: flex;
     flex-flow: row wrap;
