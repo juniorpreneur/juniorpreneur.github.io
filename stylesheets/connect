@@ -1,20 +1,19 @@
 /*
 Error: Undefined mixin 'grid-column'.
-        on line 3 of /home/nolan/juniorpreneur/source/stylesheets/connect.scss, in `grid-column'
-        from line 3 of /home/nolan/juniorpreneur/source/stylesheets/connect.scss
+        on line 2 of /home/nolan/juniorpreneur/source/stylesheets/connect.scss, in `grid-column'
+        from line 2 of /home/nolan/juniorpreneur/source/stylesheets/connect.scss
 
-1: 
-2: section.connect-header {
-3:   @include grid-column(12);
-4:   @include grid-collapse;
-5:   margin-top: 20px;
-6: 
-7:   .grey-container {
-8:     width: 100vw;
+1: section.connect-form {
+2:   @include grid-column(12);
+3:   margin-bottom: $section-spacing;
+4: 
+5:   div.form-group {
+6:     @include grid-column(6);
+7:     flex-flow: column nowrap;
 
 Backtrace:
-/home/nolan/juniorpreneur/source/stylesheets/connect.scss:3:in `grid-column'
-/home/nolan/juniorpreneur/source/stylesheets/connect.scss:3
+/home/nolan/juniorpreneur/source/stylesheets/connect.scss:2:in `grid-column'
+/home/nolan/juniorpreneur/source/stylesheets/connect.scss:2
 /home/nolan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
 /home/nolan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.4.25/lib/sass/stack.rb:98:in `block in with_mixin'
 /home/nolan/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/sass-3.4.25/lib/sass/stack.rb:115:in `with_frame'
@@ -155,4 +154,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'grid-column'.\A         on line 3 of /home/nolan/juniorpreneur/source/stylesheets/connect.scss, in `grid-column'\A         from line 3 of /home/nolan/juniorpreneur/source/stylesheets/connect.scss\A \A 1: \A 2: section.connect-header {\A 3:   @include grid-column(12);\A 4:   @include grid-collapse;\A 5:   margin-top: 20px;\A 6: \A 7:   .grey-container {\A 8:     width: 100vw;"; }
+  content: "Error: Undefined mixin 'grid-column'.\A         on line 2 of /home/nolan/juniorpreneur/source/stylesheets/connect.scss, in `grid-column'\A         from line 2 of /home/nolan/juniorpreneur/source/stylesheets/connect.scss\A \A 1: section.connect-form {\A 2:   @include grid-column(12);\A 3:   margin-bottom: $section-spacing;\A 4: \A 5:   div.form-group {\A 6:     @include grid-column(6);\A 7:     flex-flow: column nowrap;"; }
