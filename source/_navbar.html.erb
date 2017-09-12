@@ -6,9 +6,17 @@
   </section>
 
   <section class="navigation">
-    <%= link_to 'Kick Starter', '#' %> |
-    <%= link_to 'The Product', 'product' %> |
-    <%= link_to 'Learning Program', 'learning' %> |
-    <%= link_to 'Connect With Us', 'connect' %>
+    <ul>
+      <li><%= link_to 'Kick Starter', '#' %></li>
+      <li><%= link_to 'The Product', 'product' %></li>
+      <li><%= link_to 'Learning Program', 'learning' %></li>
+      <li><%= link_to 'Connect With Us', 'connect' %></li>
+    </ul>
+  </section>
+
+  <section class="mobile-logo">
+    <% link_to 'index' do %>
+      <%= image_tag 'juniorpreneur-logo.jpg' %>
+    <% end %>
   </section>
 </nav>

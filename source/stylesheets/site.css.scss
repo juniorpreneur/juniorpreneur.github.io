@@ -20,7 +20,9 @@ body {
 }
 
 strong, p {
-  font-size: 1.33em;
+  @include grid-media($large-grid) {
+    font-size: 1.33em;
+  }
 }
 
 a {
@@ -41,18 +43,68 @@ a {
 
 nav {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   padding: $small-spacing;
 
   section.logo {
-    img {
-      width: auto;
-      height: 75px;
-    }
+    display: none;
   }
 
   section.navigation {
     margin-left: auto;
+
+    ul {
+      display: flex;
+      flex-flow: row nowarp;
+
+      li {
+        margin-right: $small-spacing / 2;
+      }
+
+    }
+  }
+
+  section.mobile-logo {
+    display: block;
+    margin-top: $base-spacing;
+    @include grid-column(12);
+
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+
+  @include grid-media($large-grid) {
+    @include grid-container;
+    display: block;
+
+    section.logo {
+      display: block;
+      @include grid-column(3);
+    }
+
+    section.navigation {
+      @include grid-column(9);
+
+      ul {
+        float: right;
+        li {
+          &:after {
+            content: " |";
+          }
+
+          &:last-child::after {
+            content: "";
+          }
+        }
+      }
+    }
+
+    section.mobile-logo {
+      display: none;
+    }
   }
 }
 
@@ -64,11 +116,14 @@ section.benefit-2,
 section.kickstarter-2,
 section.quote,
 section.logo-section {
-  margin: $section-spacing;
+  margin: ($section-spacing / 2) $small-spacing;
+
+  @include grid-media($large-grid) {
+    margin: $section-spacing;
+  }
 }
 
 section.splash {
-  padding: $section-padding;
   margin-bottom: $section-spacing / 2;
 
   h2 {
@@ -78,6 +133,10 @@ section.splash {
   h1 {
     color: blue;
   }
+
+  @include grid-media($large-grid) {
+    padding: $section-padding;
+  }
 }
 
 section.kickstarter {
@@ -86,19 +145,20 @@ section.kickstarter {
 
   div.kickstarter-logo {
     @include grid-column(12);
-    margin: $base-spacing;
 
     img {
-      height: 75px;
-      width: auto;
+      height: 100%;
+      width: 100%;
+      max-width: 700px;
       display: block;
       margin: 0 auto;
+      padding: $small-spacing;
     }
   }
 
   a {
     color: $green;
-    font-size: 2em;
+    font-size: 1.5em;
     margin-bottom: $small-spacing;
     display: block;
   }
@@ -110,15 +170,40 @@ section.kickstarter {
   article {
     @include grid-column(4);
 
-    h1 {
+    header h1 {
       color: $green;
       display: block;
-      width: 100px;
-      height: 100px;
+      width: 75px;
+      height: 75px;
       border: black solid;
       margin: 0 auto;
-      line-height: 100px;
+      line-height: 75px;
       margin-bottom: $small-spacing;
+    }
+
+    h2 {
+      font-size: 1.3em;
+    }
+  }
+
+  @include grid-media($large-grid) {
+    a {
+      font-size: 2em;
+    }
+
+    div.kickstarter-logo {
+      margin: $base-spacing;
+
+      img {
+      }
+    }
+
+    article {
+      h1 {
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+      }
     }
   }
 }
@@ -128,24 +213,40 @@ section.features {
   @include grid-container;
 
   a {
-    font-size: 1.5em;
     font-weight: bold;
     color: blue;
   }
 
   figure {
-    @include grid-column(4);
+    @include grid-column(12);
     margin-bottom: $base-spacing * 2;
 
     figcaption {
       color: blue;
-      font-size: 2em;
+      font-size: 1.5em;
       font-weight: bold;
     }
 
     img {
-      width: 100px;
+      width: 75px;
       height: auto;
+    }
+  }
+
+  @include grid-media($large-grid) {
+    a {
+      font-size: 1.5em;
+    }
+
+    figure {
+      @include grid-column(4);
+
+      figcaption {
+        font-size: 2em;
+      }
+      img {
+        width: 100px;
+      }
     }
   }
 }
@@ -165,21 +266,15 @@ section.benefit {
   }
 
   figure {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-
     img {
       width: 100%;
     }
   }
 
   ul {
-    @include grid-column(6);
     margin-bottom: $base-spacing;
+    margin-left: $base-spacing;
+    text-align: left;
 
     li {
       display: flex;
@@ -200,26 +295,65 @@ section.benefit {
       }
     }
   }
+
+  @include grid-media($large-grid) {
+    ul {
+      @include grid-column(6);
+    }
+
+    figure {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
+  }
 }
 
 section.benefit-2 {
   section.grid {
-    @include grid-container;
+    display: flex;
+    flex-flow: row wrap;
 
-    article {
-      @include grid-column(4);
+    article.grid-item {
+      flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
       background-color: blue;
-      height: auto;
-      height: 200px;
-      margin-bottom: $base-spacing;
       padding: 0 $base-spacing;
+      border: 3px solid white;
+      border-style: solid;
+      max-width: 50%;
+
+      &:last-child {
+        max-width: 100%;
+      }
 
       h3 {
         text-align: center;
+        font-size: 0.75em;
+        padding: $small-spacing;
         color: white;
+      }
+    }
+  }
+
+  @include grid-media($large-grid) {
+    section.grid {
+      display: block;
+      @include grid-container;
+
+      article.grid-item {
+        @include grid-column(4);
+        height: 200px;
+        margin-bottom: $base-spacing;
+        border: none;
+        h3 {
+          font-size: 1.25em;
+        }
       }
     }
   }
@@ -228,7 +362,7 @@ section.benefit-2 {
 section.kickstarter-2 {
   article.kickstarter-2__link {
     display: flex;
-    flex-flow: row nowarp;
+    flex-flow: column wrap;
     justify-content: center;
     align-items: center;
 
@@ -238,30 +372,60 @@ section.kickstarter-2 {
     }
 
     a {
-      flex: 3;
+      flex: 1;
       color: $green;
+
+      div {
+        display: flex;
+        flex-flow: column nowrap;
+      }
 
       h1 {
         margin-bottom: $small-spacing / 2;
+        margin-left: $base-spacing;
+        margin-right: $base-spacing;
+      }
+    }
+  }
+
+  @include grid-media($large-grid) {
+    article.kickstarter-2__link {
+      flex-flow: row nowrap;
+
+      img {
+        flex: 1;
+        width: 75px;
+      }
+
+      a {
+        flex: 3;
+        color: $green;
+
+        h1 {
+          margin-bottom: $small-spacing / 2;
+        }
       }
     }
   }
 }
 
 section.quote {
-  margin: $base-spacing;
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  background-color: lightgrey;
+  @include grid-collapse;
   padding: $base-spacing;
-
+  background-color: lightgrey;
 
   h2 {
     font-weight: normal;
+  }
+
+  @include grid-media($large-grid) {
+    margin: $base-spacing;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
   }
 }
 
@@ -274,10 +438,14 @@ section.logo-section {
 footer {
   @include grid-column(12);
   @include grid-collapse;
-  padding: $section-spacing;
+
   background-color: grey;
   margin-bottom: 0;
   color: white;
+
+  ul {
+    margin-bottom: $base-spacing;
+  }
 
   small {
     display: block;
@@ -285,6 +453,10 @@ footer {
 
   a {
     color: white;
+  }
+
+  @include grid-media($large-grid) {
+    padding: $section-spacing;
   }
 }
 

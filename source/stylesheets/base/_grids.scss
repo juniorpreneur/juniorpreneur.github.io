@@ -1,0 +1,12 @@
+$large-screen: 700px;
+
+$neat-grid: (
+  columns: 12,
+  gutter: 20px,
+);
+
+$large-grid: (
+  columns: 12,
+  gutter: 20px,
+  media: $large-screen,
+);

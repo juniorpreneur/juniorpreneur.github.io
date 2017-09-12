@@ -6,7 +6,7 @@ div {
 
   section.full-shot {
     flex: 1;
-    @include grid-column(6);
+    @include grid-column(12);
     margin-bottom: $small-spacing;
     img {
       margin-bottom: $small-spacing;
@@ -14,7 +14,7 @@ div {
   }
 
   section.close-shots {
-    @include grid-column(6);
+    @include grid-column(12);
     flex: 1;
 
     figure {
@@ -26,24 +26,36 @@ div {
       }
     }
   }
+
+  @include grid-media($large-grid) {
+    section.full-shot {
+      @include grid-column(6);
+    }
+
+    section.close-shots {
+      @include grid-column(6);
+    }
+  }
 }
 
 section.specifications {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  padding: $base-spacing;
+  padding: $small-spacing;
   border-bottom: 1px solid lightgrey;
   border-right: 1px solid lightgrey;
   background-size: 20px 20px;
   background-image: linear-gradient(to right, lightgrey 1px, transparent 1px),
     linear-gradient(to bottom, lightgrey 1px, transparent 1px);
   @include grid-column(12);
+  @include grid-collapse;
 
   table {
+    @include grid-column(12);
+    width: auto;
     background-color: white;
-    @include grid-column(6);
     margin-top: 0;
     border: 1px solid lightgrey;
 
@@ -67,10 +79,24 @@ section.specifications {
   }
 
   figure {
-    @include grid-column(6);
+    @include grid-column(12);
+    @include grid-collapse;
 
     img {
       max-height: 300px;
+    }
+  }
+
+  @include grid-media($large-grid) {
+    flex-flow: row nowrap;
+    padding: $base-spacing;
+
+    table {
+      @include grid-column(6);
+    }
+
+    figure {
+      @include grid-column(6);
     }
   }
 }
