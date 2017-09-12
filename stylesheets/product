@@ -8,7 +8,7 @@ Error: Undefined mixin 'grid-column'.
 6: 
 7:   section.full-shot {
 8:     flex: 1;
-9:     @include grid-column(6);
+9:     @include grid-column(12);
 10:     margin-bottom: $small-spacing;
 11:     img {
 12:       margin-bottom: $small-spacing;
@@ -169,4 +169,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'grid-column'.\A         on line 9 of /home/nolan/juniorpreneur/source/stylesheets/product.scss, in `grid-column'\A         from line 9 of /home/nolan/juniorpreneur/source/stylesheets/product.scss\A \A 4:   justify-content: center;\A 5:   align-items: stretch;\A 6: \A 7:   section.full-shot {\A 8:     flex: 1;\A 9:     @include grid-column(6);\A 10:     margin-bottom: $small-spacing;\A 11:     img {\A 12:       margin-bottom: $small-spacing;\A 13:     }\A 14:   }"; }
+  content: "Error: Undefined mixin 'grid-column'.\A         on line 9 of /home/nolan/juniorpreneur/source/stylesheets/product.scss, in `grid-column'\A         from line 9 of /home/nolan/juniorpreneur/source/stylesheets/product.scss\A \A 4:   justify-content: center;\A 5:   align-items: stretch;\A 6: \A 7:   section.full-shot {\A 8:     flex: 1;\A 9:     @include grid-column(12);\A 10:     margin-bottom: $small-spacing;\A 11:     img {\A 12:       margin-bottom: $small-spacing;\A 13:     }\A 14:   }"; }
