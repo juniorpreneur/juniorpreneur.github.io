@@ -819,6 +819,10 @@ section.benefit ul {
     margin-left: -50vw;
     margin-right: -50vw; } }
 
+section.benefit-2 h2 {
+  font-weight: normal;
+  margin-bottom: 1.5em;
+  line-height: 1.5; }
 section.benefit-2 section.grid {
   display: -webkit-box;
   display: -ms-flexbox;
