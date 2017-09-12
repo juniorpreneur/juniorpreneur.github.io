@@ -56,11 +56,37 @@ nav {
     ul {
       display: flex;
       flex-flow: row nowarp;
+      color: blue;
 
       li {
-        margin-right: $small-spacing / 2;
+        a {
+          color: blue;
+          text-decoration: none;
+          text-transform: uppercase;
+        }
+
+        a.kickstarter-link {
+          color: grey;
+          cursor: disabled;
+          pointer-events: none;
+        }
       }
 
+      span.navigation-divider {
+        margin: 0 $small-spacing;
+      }
+    }
+
+    div.social-icons {
+      float: right;
+      img {
+        width: 36px;
+        height: 36px;
+        margin: $small-spacing;
+        background-color: grey;
+        border-radius: 5px;
+        padding: $small-spacing / 2;
+      }
     }
   }
 
@@ -91,14 +117,9 @@ nav {
 
       ul {
         float: right;
-        li {
-          &:after {
-            content: " |";
-          }
 
-          &:last-child::after {
-            content: "";
-          }
+        span.navigation-divider {
+          margin: 0 $small-spacing;
         }
       }
     }
@@ -453,6 +474,10 @@ footer {
 
   ul {
     margin-bottom: $base-spacing;
+
+    span.navigation-divider {
+      display: none;
+    }
   }
 
   small {
@@ -465,6 +490,18 @@ footer {
 
   @include grid-media($large-grid) {
     padding: $section-spacing;
+
+    ul {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+
+      span.navigation-divider {
+        display: block;
+        margin: 0 $small-spacing;
+      }
+    }
   }
 }
 

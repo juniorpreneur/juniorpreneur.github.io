@@ -7,11 +7,17 @@
 
   <section class="navigation">
     <ul>
-      <li><%= link_to 'Kick Starter', '#' %></li>
-      <li><%= link_to 'The Product', 'product' %></li>
-      <li><%= link_to 'Learning Program', 'learning' %></li>
+      <li><%= link_to 'Kick Starter', '#', class: 'kickstarter-link' %></li><span class="navigation-divider">|</span>
+      <li><%= link_to 'The Product', 'product' %></li><span class="navigation-divider">|</span>
+      <li><%= link_to 'Learning Program', 'learning' %></li><span class="navigation-divider">|</span>
       <li><%= link_to 'Connect With Us', 'connect' %></li>
     </ul>
+
+    <div class="social-icons">
+      <%= image_tag 'kickstarter.png' %>
+      <%= image_tag 'facebook.png' %>
+      <%= image_tag 'twitter.png' %>
+    </div>
   </section>
 
   <section class="mobile-logo">
