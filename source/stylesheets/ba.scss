@@ -1,4 +1,58 @@
+section.contact-header {
+}
+
+section.contact-form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  margin: $base-spacing;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: lightgrey;
+  padding: $base-spacing;
+
+
+  form {
+    max-width: 960px;
+    margin-left: -2 * $base-spacing;
+
+    div.form-group {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+
+      input {
+        &:first-child {
+          margin-left: 0 !important;
+        }
+      }
+
+
+      input.full-width {
+        margin-left: $small-spacing;
+      }
+
+      input.half-width {
+        margin-left: $small-spacing;
+      }
+    }
+
+    input[type="submit"] {
+      border-radius: 40px;
+      text-transform: uppercase;
+    }
+  }
+}
+
 section.thank-you {
+  @include grid-column(12);
   text-align: center;
 
   h1 {
@@ -6,10 +60,23 @@ section.thank-you {
     font-size: 2em;
   }
 
+    div.social-icons {
+      img {
+        width: 36px;
+        height: 36px;
+        margin: $small-spacing;
+        background-color: grey;
+        border-radius: 5px;
+        padding: $small-spacing / 2;
+      }
+    }
+
+
   ul {
     padding: 0 4em;
 
     li {
+      margin-top: $small-spacing;
       display: flex;
       flex-flow: row nowrap;
       justify-content: flex-start;
@@ -17,6 +84,7 @@ section.thank-you {
       margin-bottom: $base-spacing;
 
       img {
+        margin-top: $small-spacing / 2;
         margin-right: $small-spacing;
         height: 24px;
         width: 24px;
