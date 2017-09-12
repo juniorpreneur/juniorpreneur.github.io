@@ -7,7 +7,7 @@ section.module-header {
 }
 
 div.module-container {
-  @include grid-column(6);
+  @include grid-column(12);
   display: flex;
   flex-flow: column nowrap;
   jusitfy-content: flex-start;
@@ -16,6 +16,10 @@ div.module-container {
 
   small {
     display: block;
+  }
+
+  @include grid-media($large-grid) {
+    @include grid-column(6);
   }
 }
 
