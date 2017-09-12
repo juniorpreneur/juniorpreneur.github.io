@@ -1,3 +1,42 @@
+section.connect-form {
+  @include grid-column(12);
+  margin-bottom: $section-spacing;
+
+  div.form-group {
+    @include grid-column(6);
+    flex-flow: column nowrap;
+
+    div.province-submit {
+      display: flex;
+      flex-flow: column nowrap;
+    }
+
+
+    input.half-width {
+      margin-right: $base-spacing;
+    }
+
+    input[type="submit"] {
+      border-radius: 40px;
+      text-transform: uppercase;
+      background-color: black;
+      padding: 0 $base-spacing;
+      height: 40px;
+    }
+
+    textarea {
+      min-height: 100%;
+    }
+  }
+
+  @include grid-media($large-grid) {
+    div.form-group {
+      div.province-submit {
+        flex-flow: row nowrap;
+      }
+    }
+  }
+}
 
 section.connect-header {
   @include grid-column(12);
