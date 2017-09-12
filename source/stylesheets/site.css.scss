@@ -56,11 +56,11 @@ nav {
     ul {
       display: flex;
       flex-flow: row nowarp;
-      color: blue;
+      color: $blue;
 
       li {
         a {
-          color: blue;
+          color: $blue;
           text-decoration: none;
           text-transform: uppercase;
         }
@@ -153,7 +153,7 @@ section.splash {
   }
 
   h1 {
-    color: blue;
+    color: $blue;
   }
 
   @include grid-media($large-grid) {
@@ -236,7 +236,7 @@ section.features {
 
   a {
     font-weight: bold;
-    color: blue;
+    color: $blue;
   }
 
   figure {
@@ -244,7 +244,7 @@ section.features {
     margin-bottom: $base-spacing * 2;
 
     figcaption {
-      color: blue;
+      color: $blue;
       font-size: 1.5em;
       font-weight: bold;
     }
@@ -281,7 +281,7 @@ section.benefit {
   }
 
   strong {
-    color: blue;
+    color: $blue;
     font-size: 2em;
     margin-bottom: $small-spacing;
     display: block;
@@ -351,7 +351,7 @@ section.benefit-2 {
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: blue;
+      background-color: $blue;
       padding: 0 $base-spacing;
       border: 3px solid white;
       border-style: solid;
@@ -512,7 +512,7 @@ section.contact-header {
   h1 {
     font-weight: normal;
     font-size: 3em;
-    color: blue;
+    color: $blue;
   }
 }
 

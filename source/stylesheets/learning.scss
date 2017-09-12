@@ -25,10 +25,10 @@ div.module-container {
 
 section.modules {
   article.active-module {
-    background-color: blue;
+    background-color: $blue;
 
     h1 {
-      color: blue;
+      color: $blue;
     }
   }
 

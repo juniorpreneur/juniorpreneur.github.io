@@ -27,7 +27,7 @@ section.connect-header {
   }
 
   header {
-    color: blue;
+    color: $blue;
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-end;
@@ -66,7 +66,7 @@ section.connect-bios {
       margin-bottom: $base-spacing;
 
       figcaption {
-        color: blue;
+        color: $blue;
         font-size: 1.5em;
         font-weight: bold;
       }
