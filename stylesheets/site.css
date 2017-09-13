@@ -970,7 +970,10 @@ section.benefit ul {
     left: 50%;
     right: 50%;
     margin-left: -50vw;
-    margin-right: -50vw; } }
+    margin-right: -50vw; }
+    section.benefit figure img {
+      width: 100%;
+      height: 100%; } }
 
 section.benefit-2 h2 {
   font-weight: normal;
