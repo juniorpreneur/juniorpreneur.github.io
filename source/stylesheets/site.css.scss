@@ -42,8 +42,11 @@ a {
 
 
 nav {
+  @include grid-column(12);
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
   padding: $small-spacing;
 
   section.logo {
@@ -51,14 +54,14 @@ nav {
   }
 
   section.navigation {
-    margin-left: auto;
-
     ul {
       display: flex;
       flex-flow: row nowarp;
       color: $blue;
 
       li {
+        font-size: 0.75em;
+
         a {
           color: $blue;
           text-decoration: none;
@@ -73,12 +76,12 @@ nav {
       }
 
       span.navigation-divider {
-        margin: 0 $small-spacing;
+        margin: 0 4px;
       }
     }
 
     div.social-icons {
-      float: right;
+      margin-top: $small-spacing;
       img {
         width: 36px;
         height: 36px;
@@ -91,10 +94,8 @@ nav {
   }
 
   section.mobile-logo {
-    display: block;
-    margin-top: $base-spacing;
-    @include grid-column(12);
-    margin-bottom: $base-spacing;
+    margin-top: $small-spacing;
+    margin-bottom: $small-spacing;
 
     img {
       display: block;
@@ -118,9 +119,18 @@ nav {
       ul {
         float: right;
 
+        li {
+          font-size: 1em;
+        }
+
         span.navigation-divider {
           margin: 0 $small-spacing;
         }
+      }
+
+      div.social-icons {
+        float: right;
+        margin-left: auto;
       }
     }
 
@@ -474,11 +484,19 @@ section.kickstarter-2 {
 
 section.quote {
   @include grid-collapse;
-  padding: $base-spacing;
+  @include grid-container;
+  padding: $small-spacing;
   background-color: lightgrey;
 
   h2 {
+    @include grid-column(12);
     font-weight: normal;
+    font-size: 1em;
+  }
+
+  h1 {
+    @include grid-column(12);
+    font-size: 1.25em;
   }
 
   @include grid-media($large-grid) {
