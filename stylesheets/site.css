@@ -699,27 +699,36 @@ a {
   margin: 0 auto; }
 
 nav {
+  width: calc(100% - 40px);
+  float: left;
+  margin-left: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0.75em; }
   nav section.logo {
     display: none; }
-  nav section.navigation {
-    margin-left: auto; }
-    nav section.navigation ul {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-          -ms-flex-flow: row nowarp;
-              flex-flow: row nowarp;
-      color: #003399; }
+  nav section.navigation ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowarp;
+            flex-flow: row nowarp;
+    color: #003399; }
+    nav section.navigation ul li {
+      font-size: 0.75em; }
       nav section.navigation ul li a {
         color: #003399;
         text-decoration: none;
@@ -728,24 +737,20 @@ nav {
         color: grey;
         cursor: disabled;
         pointer-events: none; }
-      nav section.navigation ul span.navigation-divider {
-        margin: 0 0.75em; }
-    nav section.navigation div.social-icons {
-      float: right; }
-      nav section.navigation div.social-icons img {
-        width: 36px;
-        height: 36px;
-        margin: 0.75em;
-        background-color: grey;
-        border-radius: 5px;
-        padding: 0.375em; }
+    nav section.navigation ul span.navigation-divider {
+      margin: 0 4px; }
+  nav section.navigation div.social-icons {
+    margin-top: 0.75em; }
+    nav section.navigation div.social-icons img {
+      width: 36px;
+      height: 36px;
+      margin: 0.75em;
+      background-color: grey;
+      border-radius: 5px;
+      padding: 0.375em; }
   nav section.mobile-logo {
-    display: block;
-    margin-top: 1.5em;
-    width: calc(100% - 40px);
-    float: left;
-    margin-left: 20px;
-    margin-bottom: 1.5em; }
+    margin-top: 0.75em;
+    margin-bottom: 0.75em; }
     nav section.mobile-logo img {
       display: block;
       margin: 0 auto;
@@ -768,8 +773,13 @@ nav {
         margin-left: 20px; }
         nav section.navigation ul {
           float: right; }
+          nav section.navigation ul li {
+            font-size: 1em; }
           nav section.navigation ul span.navigation-divider {
             margin: 0 0.75em; }
+        nav section.navigation div.social-icons {
+          float: right;
+          margin-left: auto; }
       nav section.mobile-logo {
         display: none; } }
 
@@ -1088,10 +1098,23 @@ section.quote {
   margin-left: -20px;
   margin-right: -20px;
   width: calc(100% + 40px);
-  padding: 1.5em;
+  padding: 0.75em;
   background-color: lightgrey; }
+  section.quote::after {
+    clear: both;
+    content: "";
+    display: block; }
   section.quote h2 {
-    font-weight: normal; }
+    width: calc(100% - 40px);
+    float: left;
+    margin-left: 20px;
+    font-weight: normal;
+    font-size: 1em; }
+  section.quote h1 {
+    width: calc(100% - 40px);
+    float: left;
+    margin-left: 20px;
+    font-size: 1.25em; }
   @media only screen and (min-width: 700px) {
     section.quote {
       margin: 1.5em;
