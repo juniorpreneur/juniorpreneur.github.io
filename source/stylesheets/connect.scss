@@ -19,13 +19,14 @@ section.connect-form {
     input[type="submit"] {
       border-radius: 40px;
       text-transform: uppercase;
-      background-color: black;
+      background-color: $blue;
       padding: 0 $base-spacing;
       height: 40px;
     }
 
     textarea {
       min-height: 100%;
+      font-family: $base-font-family;
     }
   }
 
