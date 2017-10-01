@@ -249,6 +249,10 @@ section.features {
     color: $blue;
   }
 
+  small {
+    color: $blue;
+  }
+
   figure {
     @include grid-column(12);
     margin-bottom: $base-spacing * 2;

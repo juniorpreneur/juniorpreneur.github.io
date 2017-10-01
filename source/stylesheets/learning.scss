@@ -4,22 +4,30 @@ section.module-header {
   h2 {
     font-weight: normal;
   }
+
+  a {
+    color: $blue;
+  }
+
+  small {
+    display: block;
+    color: $blue;
+  }
 }
 
 div.module-container {
   @include grid-column(12);
-  display: flex;
   flex-flow: column nowrap;
   jusitfy-content: flex-start;
-  align-items: center;
   margin-bottom: $base-spacing;
+  min-height: 540px;
 
   small {
-    display: block;
+    display: inline-block;
   }
 
   @include grid-media($large-grid) {
-    @include grid-column(6);
+    @include grid-column(4);
   }
 }
 
@@ -68,7 +76,6 @@ section.modules {
 
     header {
       background-color: white;
-      min-height: 238px;
       border-radius: 5px;
       display: flex;
       flex-flow: column nowrap;
@@ -76,6 +83,7 @@ section.modules {
       align-items: center;
       padding: 2em;
       margin-bottom: $small-spacing;
+      min-height: 385px;
 
       h1 {
         font-weight: normal;

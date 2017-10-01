@@ -4,16 +4,15 @@
     which guide you through the essentials of building a business plan, testing it
     in real-life scenarios, and fine tuning your formula for the best results!
   </h2>
+
+  <%= link_to 'DOWNLOAD OUR FREE PROGRAM PRIMER', 'juniorpreneur-primer.zip' %>
+  <small>and get a taste of what the Juniorpreneur cirriculum is all about!</small>
 </section>
 
 <section class="modules">
   <% data.modules.each_with_index do |product_module, index| %>
     <div class="module-container">
-    <% if index == 0 %>
-      <article class="active-module">
-    <% else %>
-      <article class="unactive-module">
-    <% end %>
+    <article class="unactive-module">
 
     <p>MODULE <%= index + 1 %></p>
 
@@ -28,9 +27,7 @@
       <p>Download<p>
     </div>
   </article>
-  <% if index != 0 %>
-    <small>MEMBERSHIP REQUIRED</small>
-  <% end %>
+  <small>MEMBERSHIP REQUIRED</small>
   </div>
   <% end %>
 </section>
