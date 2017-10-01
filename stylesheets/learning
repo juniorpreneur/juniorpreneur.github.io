@@ -8,7 +8,7 @@ Error: Undefined variable: "$section-spacing".
 4:   h2 {
 5:     font-weight: normal;
 6:   }
-7: }
+7: 
 
 Backtrace:
 /home/nolan/juniorpreneur/source/stylesheets/learning.scss:2
@@ -154,4 +154,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$section-spacing\".\A         on line 2 of /home/nolan/juniorpreneur/source/stylesheets/learning.scss\A \A 1: section.module-header {\A 2:   margin: $section-spacing 0;\A 3: \A 4:   h2 {\A 5:     font-weight: normal;\A 6:   }\A 7: }"; }
+  content: "Error: Undefined variable: \"$section-spacing\".\A         on line 2 of /home/nolan/juniorpreneur/source/stylesheets/learning.scss\A \A 1: section.module-header {\A 2:   margin: $section-spacing 0;\A 3: \A 4:   h2 {\A 5:     font-weight: normal;\A 6:   }\A 7: "; }

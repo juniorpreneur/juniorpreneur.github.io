@@ -378,28 +378,28 @@ section.module-header {
   margin: 5vh 0; }
   section.module-header h2 {
     font-weight: normal; }
+  section.module-header a {
+    color: #003399; }
+  section.module-header small {
+    display: block;
+    color: #003399; }
 
 div.module-container {
   width: calc(100% - 40px);
   float: left;
   margin-left: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
   jusitfy-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 1.5em; }
+  margin-bottom: 1.5em;
+  min-height: 540px; }
   div.module-container small {
-    display: block; }
+    display: inline-block; }
   @media only screen and (min-width: 700px) {
     div.module-container {
-      width: calc(50% - 30px);
+      width: calc(33.33333% - 26.66667px);
       float: left;
       margin-left: 20px; } }
 
@@ -445,7 +445,6 @@ section.modules article.unactive-module {
   section.modules article.active-module header,
   section.modules article.unactive-module header {
     background-color: white;
-    min-height: 238px;
     border-radius: 5px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -461,7 +460,8 @@ section.modules article.unactive-module {
         -ms-flex-align: center;
             align-items: center;
     padding: 2em;
-    margin-bottom: 0.75em; }
+    margin-bottom: 0.75em;
+    min-height: 385px; }
     section.modules article.active-module header h1,
     section.modules article.unactive-module header h1 {
       font-weight: normal;
@@ -888,6 +888,8 @@ section.features::after {
   display: block; }
 section.features a {
   font-weight: bold;
+  color: #003399; }
+section.features small {
   color: #003399; }
 section.features figure {
   width: calc(100% - 40px);
