@@ -42,6 +42,7 @@ a {
 
 
 nav {
+  z-index: 99999999;
   @include grid-column(12);
   display: flex;
   flex-flow: column nowrap;
@@ -156,87 +157,69 @@ section.logo-section {
 }
 
 section.splash {
-  margin-bottom: $section-spacing / 2;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  position: relative;
+  z-index: -9999;
 
   h2 {
     font-weight: normal;
+  }
+
+  strong {
+    font-size: 1em;
   }
 
   h1 {
     color: $blue;
   }
 
+  img {
+    height: 128px;
+    width: 128px;
+  }
+
   @include grid-media($large-grid) {
     padding: $section-padding;
+
+    img {
+      position: absolute;
+      right: -$base-spacing;
+      top: 65%;
+    }
   }
 }
 
 section.kickstarter {
-  @include grid-container;
-  margin-top: $section-spacing / 2;
+  @include grid-column(12);
+  margin-bottom: $section-spacing * 3;
+  position: relative;
 
-  div.kickstarter-logo {
-    @include grid-column(12);
+  div.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+    margin: $base-spacing;
+    margin-bottom: $base-spacing * 2;
 
-    img {
-      height: 100%;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      max-width: 700px;
-      display: block;
-      margin: 0 auto;
-      padding: $small-spacing;
+      height: 100%;
     }
   }
 
-  a {
-    color: $green;
-    font-size: 1.5em;
-    margin-bottom: $small-spacing;
-    display: block;
-  }
-
-  .green {
-    color: $green;
-  }
-
-  article {
-    @include grid-column(4);
-
-    header h1 {
-      color: $green;
-      display: block;
-      width: 75px;
-      height: 75px;
-      border: black solid;
-      margin: 0 auto;
-      line-height: 75px;
-      margin-bottom: $small-spacing;
-    }
-
-    h2 {
-      font-size: 1.3em;
-    }
-  }
-
-  @include grid-media($large-grid) {
-    a {
-      font-size: 2em;
-    }
-
-    div.kickstarter-logo {
-      margin: $base-spacing;
-
-      img {
-      }
-    }
-
-    article {
-      h1 {
-        width: 100px;
-        height: 100px;
-        line-height: 100px;
-      }
-    }
+  a.kickstarter-page-button {
+    border-radius: 1.75em;
+    color: white;
+    text-decoration: none;
+    background-color: $blue;
+    font-size: 1.75em;
+    padding: ($small-spacing / 3) $small-spacing;
   }
 }
 
