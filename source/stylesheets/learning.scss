@@ -6,6 +6,11 @@ section.module-header {
   }
 
   a {
+    font-weight: bold;
+    color: $blue;
+  }
+
+  small {
     color: $blue;
   }
 
@@ -13,14 +18,21 @@ section.module-header {
     display: block;
     color: $blue;
   }
+
+  @include grid-media($large-grid) {
+    a {
+      font-size: 1.5em;
+    }
+  }
 }
 
 div.module-container {
   @include grid-column(12);
   flex-flow: column nowrap;
   jusitfy-content: flex-start;
+  align-items: center;
   margin-bottom: $base-spacing;
-  min-height: 540px;
+  flex: 0 1 1;
 
   small {
     display: inline-block;
@@ -32,6 +44,11 @@ div.module-container {
 }
 
 section.modules {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: start;
+  align-items: stretch;
+
   article.active-module {
     background-color: $blue;
 
@@ -81,13 +98,13 @@ section.modules {
       flex-flow: column nowrap;
       justify-content: center;
       align-items: center;
-      padding: 2em;
+      padding: 1em;
       margin-bottom: $small-spacing;
-      min-height: 385px;
+      min-height: 400px;
 
       h1 {
         font-weight: normal;
-        font-size: 2.5em;
+        font-size: 2em;
       }
     }
   }
