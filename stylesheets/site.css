@@ -379,10 +379,16 @@ section.module-header {
   section.module-header h2 {
     font-weight: normal; }
   section.module-header a {
+    font-weight: bold;
+    color: #003399; }
+  section.module-header small {
     color: #003399; }
   section.module-header small {
     display: block;
     color: #003399; }
+  @media only screen and (min-width: 700px) {
+    section.module-header a {
+      font-size: 1.5em; } }
 
 div.module-container {
   width: calc(100% - 40px);
@@ -393,8 +399,13 @@ div.module-container {
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
   jusitfy-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 1.5em;
-  min-height: 540px; }
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 1;
+          flex: 0 1 1; }
   div.module-container small {
     display: inline-block; }
   @media only screen and (min-width: 700px) {
@@ -403,69 +414,83 @@ div.module-container {
       float: left;
       margin-left: 20px; } }
 
-section.modules article.active-module {
-  background-color: #003399; }
-  section.modules article.active-module h1 {
-    color: #003399; }
-section.modules article.unactive-module {
-  background-color: lightgrey; }
-  section.modules article.unactive-module h1 {
-    color: lightgrey; }
-section.modules article.active-module,
-section.modules article.unactive-module {
-  color: white;
-  padding: 1.5em 0.75em;
-  border-radius: 5px;
-  margin-bottom: 0.75em; }
-  section.modules article.active-module div.download-container,
-  section.modules article.unactive-module div.download-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center; }
-    section.modules article.active-module div.download-container img,
-    section.modules article.unactive-module div.download-container img {
-      display: inline-block;
-      margin-right: 0.75em;
-      height: 48px;
-      width: auto; }
-    section.modules article.active-module div.download-container p,
-    section.modules article.unactive-module div.download-container p {
-      display: inline-block;
-      margin-bottom: 0; }
-  section.modules article.active-module header,
-  section.modules article.unactive-module header {
-    background-color: white;
+section.modules {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch; }
+  section.modules article.active-module {
+    background-color: #003399; }
+    section.modules article.active-module h1 {
+      color: #003399; }
+  section.modules article.unactive-module {
+    background-color: lightgrey; }
+    section.modules article.unactive-module h1 {
+      color: lightgrey; }
+  section.modules article.active-module,
+  section.modules article.unactive-module {
+    color: white;
+    padding: 1.5em 0.75em;
     border-radius: 5px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 2em;
-    margin-bottom: 0.75em;
-    min-height: 385px; }
-    section.modules article.active-module header h1,
-    section.modules article.unactive-module header h1 {
-      font-weight: normal;
-      font-size: 2.5em; }
+    margin-bottom: 0.75em; }
+    section.modules article.active-module div.download-container,
+    section.modules article.unactive-module div.download-container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: row nowrap;
+              flex-flow: row nowrap;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      section.modules article.active-module div.download-container img,
+      section.modules article.unactive-module div.download-container img {
+        display: inline-block;
+        margin-right: 0.75em;
+        height: 48px;
+        width: auto; }
+      section.modules article.active-module div.download-container p,
+      section.modules article.unactive-module div.download-container p {
+        display: inline-block;
+        margin-bottom: 0; }
+    section.modules article.active-module header,
+    section.modules article.unactive-module header {
+      background-color: white;
+      border-radius: 5px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: column nowrap;
+              flex-flow: column nowrap;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      padding: 1em;
+      margin-bottom: 0.75em;
+      min-height: 400px; }
+      section.modules article.active-module header h1,
+      section.modules article.unactive-module header h1 {
+        font-weight: normal;
+        font-size: 2em; }
 
 section.connect-form {
   width: calc(100% - 40px);
@@ -755,9 +780,7 @@ nav {
         text-decoration: none;
         text-transform: uppercase; }
       nav section.navigation ul li a.kickstarter-link {
-        color: grey;
-        cursor: disabled;
-        pointer-events: none; }
+        color: #003399; }
     nav section.navigation ul span.navigation-divider {
       margin: 0 4px; }
   nav section.navigation div.social-icons {
